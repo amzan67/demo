@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Food Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Fresh Delights AR</h1>
+        <p>Select an item to view it in your room!</p>
+    </header>
+
+    <nav class="menu-selection">
+        <button onclick="updateMenu('burger.glb', 'Classic Beef Burger', '$8.50', 'Juicy beef patty with cheddar.')">🍔 Burgers</button>
+        <button onclick="updateMenu('donut.glb', 'Glazed Donut', '$3.25', 'Sweet strawberry glazed with sprinkles.')">🍩 Donuts</button>
+    </nav>
+
+    <main class="display-container">
+        <model-viewer id="food-viewer" 
+            src="burger.glb" 
+            ar 
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls 
+            shadow-intensity="1" 
+            auto-rotate>
+            <button slot="ar-button" class="ar-button">VIEW IN AR</button>
+        </model-viewer>
+
+        <div class="details">
+            <h2 id="item-name">Classic Beef Burger</h2>
+            <p id="item-desc">Juicy beef patty with cheddar.</p>
+            <span id="item-price" class="price">$8.50</span>
+        </div>
+    </main>
+
+    <script src="functions.js"></script>
+</body>
+</html>
