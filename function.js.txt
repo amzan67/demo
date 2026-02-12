@@ -1,0 +1,15 @@
+function updateMenu(modelFile, name, price, description) {
+    // Select the elements
+    const viewer = document.querySelector('#food-viewer');
+    const title = document.querySelector('#item-name');
+    const cost = document.querySelector('#item-price');
+    const desc = document.querySelector('#item-desc');
+
+    // Update the 3D model source
+    viewer.src = modelFile;
+    
+    // Update the text information
+    title.textContent = name;
+    cost.textContent = price;
+    desc.textContent = description;
+}
