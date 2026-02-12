@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Restaurant Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Gourmet AR Menu</h1>
+        <p>Tap a dish to see it in 3D & AR</p>
+    </header>
+
+    <nav class="menu-nav">
+        <button onclick="changeMenu('burger.glb', 'Classic Beef Burger', '$8.99')">🍔 Burger</button>
+        <button onclick="changeMenu('just about1.glb', 'Glazed Donut', '$3.50')">🍩 Donut</button>
+    </nav>
+
+    <div class="card">
+        <model-viewer id="menu-viewer" 
+            src="burger.glb" 
+            ar 
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls 
+            auto-rotate 
+            shadow-intensity="1">
+            
+            <button slot="ar-button" class="ar-launch-btn">
+                👋 VIEW IN YOUR SPACE
+            </button>
+        </model-viewer>
+
+        <div class="item-details">
+            <h2 id="item-title">Classic Beef Burger</h2>
+            <p id="item-price">$8.99</p>
+        </div>
+    </div>
+
+    <script src="function.js"></script>
+</body>
+</html>
